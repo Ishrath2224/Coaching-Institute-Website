@@ -1,0 +1,139 @@
+
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: var(--font-sans); }
+  .site { width: 100%; border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+
+  /* NAV */
+  .nav { background: #1a1a2e; display: flex; align-items: center; justify-content: space-between; padding: 12px 20px; }
+  .nav-logo { color: #fff; font-size: 15px; font-weight: 500; }
+  .nav-logo span { color: #c9974a; }
+  .nav-links { display: flex; gap: 16px; }
+  .nav-links a { color: #bbb; font-size: 11px; text-decoration: none; }
+  .nav-btn { background: #c9974a; color: #fff; font-size: 10px; padding: 5px 12px; border-radius: 20px; font-weight: 500; }
+
+  /* HERO */
+  .hero { background: #faf7f2; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 28px 20px; align-items: center; }
+  .hero h1 { font-size: 18px; font-weight: 500; line-height: 1.3; color: #1a1a2e; margin-bottom: 8px; }
+  .hero h1 em { font-style: normal; color: #c9974a; }
+  .hero p { font-size: 11px; color: #4a5568; line-height: 1.6; margin-bottom: 12px; }
+  .hero-btns { display: flex; gap: 8px; }
+  .btn-gold { background: #c9974a; color: #fff; font-size: 10px; padding: 6px 14px; border-radius: 20px; font-weight: 500; }
+  .btn-dark { border: 1.5px solid #1a1a2e; color: #1a1a2e; font-size: 10px; padding: 5px 14px; border-radius: 20px; font-weight: 500; }
+  .hero-stats { background: #1a1a2e; border-radius: 10px; padding: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .stat { background: rgba(255,255,255,.08); border-radius: 8px; padding: 10px; text-align: center; }
+  .stat-num { font-size: 16px; font-weight: 500; color: #c9974a; }
+  .stat-lbl { font-size: 9px; color: #888; margin-top: 2px; text-transform: uppercase; letter-spacing: .04em; }
+
+  /* COURSES */
+  .courses { background: #fff; padding: 20px; }
+  .section-eyebrow { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #c9974a; font-weight: 600; margin-bottom: 4px; }
+  .section-title { font-size: 15px; font-weight: 500; color: #1a1a2e; margin-bottom: 14px; }
+  .courses-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .course-card { background: #f0ebe2; border-radius: 8px; padding: 12px; border-left: 3px solid #c9974a; }
+  .course-card .icon { font-size: 16px; margin-bottom: 6px; }
+  .course-card h3 { font-size: 11px; font-weight: 500; color: #1a1a2e; margin-bottom: 4px; }
+  .course-card p { font-size: 9px; color: #4a5568; line-height: 1.5; }
+  .course-meta { font-size: 8px; color: #c9974a; font-weight: 600; margin-top: 6px; }
+
+  /* TESTIMONIALS */
+  .testimonials { background: #1a1a2e; padding: 20px; }
+  .testimonials .section-title { color: #fff; }
+  .tgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .tcard { background: rgba(255,255,255,.07); border-radius: 8px; padding: 12px; border-top: 2px solid #c9974a; }
+  .stars { color: #c9974a; font-size: 9px; margin-bottom: 6px; }
+  .tcard p { font-size: 9px; color: #ccc; line-height: 1.6; font-style: italic; margin-bottom: 8px; }
+  .author { display: flex; align-items: center; gap: 6px; }
+  .avatar { width: 24px; height: 24px; border-radius: 50%; background: #c9974a; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 500; color: #1a1a2e; flex-shrink: 0; }
+  .author-name { font-size: 9px; font-weight: 500; color: #eee; }
+  .author-sub { font-size: 8px; color: #888; }
+
+  /* CONTACT */
+  .contact { background: #faf7f2; padding: 20px; }
+  .contact-inner { max-width: 400px; margin: 0 auto; }
+  .contact-inner .section-title { text-align: center; }
+  .contact-inner .section-eyebrow { text-align: center; display: block; }
+  .contact-sub { text-align: center; font-size: 10px; color: #4a5568; margin-bottom: 14px; }
+  .form { display: flex; flex-direction: column; gap: 8px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .form input, .form select, .form textarea {
+    padding: 7px 10px; border: 1px solid #d8d0c4; border-radius: 6px;
+    font-size: 10px; background: #fff; color: #1a1a2e; font-family: inherit; outline: none;
+  }
+  .form textarea { resize: none; height: 48px; }
+  .form-btn { background: #1a1a2e; color: #fff; font-size: 10px; font-weight: 500; padding: 8px; border-radius: 20px; border: none; width: 100%; cursor: pointer; font-family: inherit; }
+
+  /* FOOTER */
+  .footer { background: #1a1a2e; text-align: center; padding: 10px; font-size: 9px; color: #555; }
+  .footer span { color: #c9974a; }
+</style>
+
+<div class="site">
+  <div class="nav">
+    <div class="nav-logo">Elevate<span>ED</span></div>
+    <div class="nav-links">
+      <a href="#">Courses</a>
+      <a href="#">Stories</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="nav-btn">Enroll Now</div>
+  </div>
+
+  <div class="hero">
+    <div>
+      <h1>Unlock Your <em>Full</em> Potential With Expert Coaching</h1>
+      <p>At ElevateED, we prepare ambitious students for competitive exams, skill courses, and professional certifications.</p>
+      <div class="hero-btns">
+        <div class="btn-gold">Explore Courses</div>
+        <div class="btn-dark">Book a Free Demo</div>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">4,200+</div><div class="stat-lbl">Students Placed</div></div>
+      <div class="stat"><div class="stat-num">98%</div><div class="stat-lbl">Success Rate</div></div>
+      <div class="stat"><div class="stat-num">12+</div><div class="stat-lbl">Years Exp.</div></div>
+      <div class="stat"><div class="stat-num">40+</div><div class="stat-lbl">Mentors</div></div>
+    </div>
+  </div>
+
+  <div class="courses">
+    <div class="section-eyebrow">What We Teach</div>
+    <div class="section-title">Our Flagship Courses</div>
+    <div class="courses-grid">
+      <div class="course-card"><div class="icon">📐</div><h3>JEE & NEET Foundation</h3><p>Rigorous two-year program covering PCM & Biology with concept clarity and problem-solving speed.</p><div class="course-meta">2 Years · Jun & Oct batches</div></div>
+      <div class="course-card"><div class="icon">💻</div><h3>Full Stack Web Dev</h3><p>HTML to deployment — React, Node.js, databases, and real-world projects with portfolio support.</p><div class="course-meta">6 Months · Weekend batch</div></div>
+      <div class="course-card"><div class="icon">📊</div><h3>Data Science</h3><p>Python, ML, and visualisation taught through industry datasets with live project reviews.</p><div class="course-meta">4 Months · Weekday batch</div></div>
+      <div class="course-card"><div class="icon">🗣️</div><h3>Communication Skills</h3><p>Public speaking, GD, and interview prep for students entering corporate life.</p><div class="course-meta">8 Weeks · Flexible slots</div></div>
+    </div>
+  </div>
+
+  <div class="testimonials">
+    <div class="section-eyebrow" style="color:#c9974a;">Student Stories</div>
+    <div class="section-title">What Our Alumni Say</div>
+    <div class="tgrid">
+      <div class="tcard"><div class="stars">★★★★★</div><p>"My mentor identified exactly where I was losing marks and fixed it in two weeks."</p><div class="author"><div class="avatar">R</div><div><div class="author-name">Rohan Mehra</div><div class="author-sub">JEE Advanced · AIR 312</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"I walked in knowing zero coding. Six months later I had a job offer."</p><div class="author"><div class="avatar">P</div><div><div class="author-name">Priya Sharma</div><div class="author-sub">Full Stack · Batch 2023</div></div></div></div>
+      <div class="tcard"><div class="stars">★★★★★</div><p>"The soft skills module transformed how I present myself. Got placed at a Big 4 firm."</p><div class="author"><div class="avatar">A</div><div><div class="author-name">Aisha Khan</div><div class="author-sub">Comm. Skills · 2023</div></div></div></div>
+    </div>
+  </div>
+
+  <div class="contact">
+    <div class="contact-inner">
+      <span class="section-eyebrow">Reach Out</span>
+      <div class="section-title">Get in Touch</div>
+      <div class="contact-sub">Fill in the form and our team will get back within 24 hours.</div>
+      <div class="form">
+        <div class="form-row">
+          <input type="text" placeholder="Your Name" />
+          <input type="email" placeholder="Email Address" />
+        </div>
+        <input type="tel" placeholder="Phone Number" />
+        <select><option>Select a Course</option><option>JEE & NEET</option><option>Full Stack</option></select>
+        <textarea placeholder="Any questions?"></textarea>
+        <button class="form-btn">Send Message →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">© 2026 <span>ElevateED Coaching Institute</span>. All rights reserved.</div>
+</div>
